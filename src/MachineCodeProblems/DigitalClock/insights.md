@@ -16,4 +16,3 @@
 3. Stop Timer button should stop the timer but show the last updated timer - Easy
 4. Show time with two digits always - Medium
 5. Add Resume Timer button - Medium
-    

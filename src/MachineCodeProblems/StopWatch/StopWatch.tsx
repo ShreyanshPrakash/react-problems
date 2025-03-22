@@ -1,3 +1,5 @@
+import { StopWatchStateModel } from "@/MachineCodeProblems/StopWatch/StopWatch.model";
+import { handleTimeProcessingUsingTimeDiff } from "@/MachineCodeProblems/StopWatch/StopWatch.utils";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
@@ -17,62 +19,24 @@ const ElementStyle = styled.div`
 `;
 
 /*
-    ====================================================== [Models and types]======================================================
-*/
-
-class TimeStateModel {
-  isRunning: boolean;
-  hour: number;
-  min: number;
-  sec: number;
-  milliSeconds: number;
-  constructor() {
-    this.isRunning = false;
-    this.hour = 0;
-    this.min = 0;
-    this.sec = 0;
-    this.milliSeconds = 0;
-  }
-}
-
-/*
-    ====================================================== [Util Methods]======================================================
-*/
-
-const handleTimeProcessing = () => {
-  const date = new Date();
-
-  const hour = date.getHours();
-  const min = date.getMinutes();
-  const sec = date.getSeconds();
-  const milliSeconds = date.getMilliseconds();
-
-  return {
-    hour,
-    min,
-    sec,
-    milliSeconds,
-  };
-};
-
-/*
     ====================================================== [StopWatch Component]======================================================
 */
 
 export const StopWatch = () => {
-  const [timeState, setTimeState] = useState<TimeStateModel>(
-    new TimeStateModel()
+  const [timeState, setTimeState] = useState<StopWatchStateModel>(
+    new StopWatchStateModel()
   );
-  const setIntervalInst = useRef<any>(null);
+  const setIntervalInstRef = useRef<any>(null);
+  const timerStartTimeRef = useRef<number>(0);
 
   useEffect(() => {
-    return () => clearInterval(setIntervalInst.current);
+    return () => clearInterval(setIntervalInstRef.current);
   }, []);
 
   const startStopWatch = (): ReturnType<typeof setInterval> => {
     const intervalInst = setInterval(() => {
-      const result = handleTimeProcessing();
-      setTimeState((prev) => ({
+      const result = handleTimeProcessingUsingTimeDiff(timerStartTimeRef.current);
+      setTimeState((prev: StopWatchStateModel) => ({
         ...prev,
         ...result,
       }));
@@ -81,28 +45,40 @@ export const StopWatch = () => {
   };
 
   const handleStartTimer = () => {
-    const result = handleTimeProcessing();
-    setTimeState((prev) => ({ ...prev, isRunning: true, ...result }));
+    timerStartTimeRef.current = new Date().getTime();
+    const result = handleTimeProcessingUsingTimeDiff(timerStartTimeRef.current);
+    setTimeState((prev: StopWatchStateModel) => ({ ...prev, isRunning: true, ...result }));
     const intervalInst = startStopWatch();
-    setIntervalInst.current = intervalInst;
+    setIntervalInstRef.current = intervalInst;
+  };
+
+  const handleStopTimer = () => {
+    clearInterval(setIntervalInstRef.current);
+    setIntervalInstRef.current = null;
   };
 
   const handleResetTimer = () => {
-    clearInterval(setIntervalInst.current);
-    setIntervalInst.current = null;
-    setTimeState(new TimeStateModel());
+    clearInterval(setIntervalInstRef.current);
+    setIntervalInstRef.current = null;
+    setTimeState(new StopWatchStateModel());
   };
 
   return (
     <StopWatchStyles>
-      <div className="time-wrapper">
+      {/* <div className="time-wrapper">
         <ElementStyle>{timeState?.hour}</ElementStyle>
         <ElementStyle>{timeState?.min}</ElementStyle>
         <ElementStyle>{timeState?.sec}</ElementStyle>
-      </div>
+      </div> */}
+      <ElementStyle className="time-wrapper-pad">
+        {timeState.template}
+      </ElementStyle>
       <div className="action-buttons-wrapper">
         <button onClick={handleStartTimer} disabled={timeState.isRunning}>
           Start Timer
+        </button>
+        <button onClick={handleStopTimer} disabled={!timeState.isRunning}>
+          Stop Timer
         </button>
         <button onClick={handleResetTimer} disabled={!timeState.isRunning}>
           Reset Timer

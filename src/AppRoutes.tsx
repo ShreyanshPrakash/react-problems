@@ -1,5 +1,10 @@
 import { RouteObject, useRoutes } from "react-router";
-import { Counter, MachineCodeProblems, StopWatch } from "@/MachineCodeProblems";
+import {
+  Counter,
+  MachineCodeProblems,
+  StopWatch,
+  DigitalClock,
+} from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
 
@@ -26,6 +31,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "stop-watch",
         element: <StopWatch />,
+      },
+      {
+        path: "digital-clock",
+        element: <DigitalClock />,
       },
     ],
   },

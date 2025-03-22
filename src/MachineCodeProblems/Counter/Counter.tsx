@@ -1,5 +1,5 @@
-import { useSignal } from "@preact/signals-react";
-import { MouseEvent, MouseEventHandler, useState } from "react";
+import { Signal, useSignal } from "@preact/signals-react";
+import { MouseEvent } from "react";
 import styled from "styled-components";
 
 const CounterStyles = styled.div`
@@ -27,9 +27,10 @@ const buttonConfig = [
   },
 ];
 
+let count = new Signal<number>(0);
+
 export const Counter = () => {
-  const [counterValue, setCounterValue] = useState<number>(0);
-  let count = useSignal<number>(0);
+  // let count = useSignal<number>(0);
 
   const handleActionClick = (event: MouseEvent<HTMLButtonElement>) => {
     const name = event.currentTarget.name;

@@ -1,9 +1,9 @@
 import { RouteObject, useRoutes } from "react-router";
-import { Counter, MachineCodeProblems } from "@/MachineCodeProblems";
+import { Counter, MachineCodeProblems, StopWatch } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
 
-const APP_ROUTES_CONFIG: Array<RouteObject> = [
+const DEFAULT_ROUTES: Array<RouteObject> = [
   {
     path: "*",
     element: <NotFoundErrorPage />,
@@ -12,25 +12,28 @@ const APP_ROUTES_CONFIG: Array<RouteObject> = [
     path: "/",
     element: <Home />,
   },
-  {
-    path: "/counter",
-    element: <Counter />,
-  },
+];
+
+const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
   {
     path: "/machine-code-problems",
     element: <MachineCodeProblems />,
     children: [
-      // {
-      //   path: "",
-      //   index: true,
-      //   element: <MachineCodeProblems />,
-      // },
       {
-        path: "counter2",
+        path: "counter",
         element: <Counter />,
+      },
+      {
+        path: "stop-watch",
+        element: <StopWatch />,
       },
     ],
   },
+];
+
+const APP_ROUTES_CONFIG: Array<RouteObject> = [
+  ...DEFAULT_ROUTES,
+  ...MACHINE_CODE_PROBLEM_ROUTES,
 ];
 
 export const AppRoutes: FC<{}> = (): ReactElement => {

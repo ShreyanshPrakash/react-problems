@@ -52,3 +52,8 @@ export default tseslint.config({
   },
 })
 ```
+
+
+## Machine Code Problems
+
+[StopWatch](src/MachineCodeProblems/StopWatch/insights.md)

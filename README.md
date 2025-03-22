@@ -1,12 +1,12 @@
 # React + TypeScript + Vite
 
-## Machine Code Problems
+# Machine Code Problems
 
-- Easy
+## Easy
 1. [StopWatch](src/MachineCodeProblems/StopWatch/insights.md)
-2. DigitalClock
-3. Counter
+2. [DigitalClock](src/MachineCodeProblems/DigitalClock/)
+3. [Counter](src/MachineCodeProblems/Counter/)
 
-- Medium
+## Medium
 
-- Hard
+## Hard

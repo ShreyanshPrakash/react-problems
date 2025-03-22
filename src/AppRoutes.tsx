@@ -1,33 +1,38 @@
-import { Route, Routes } from "react-router";
-import { Counter, Home } from "@/components";
+import { RouteObject, useRoutes } from "react-router";
+import { Counter, MachineCodeProblems } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
+import { NotFoundErrorPage, Home } from "@/components";
 
-interface IRoutePrams {
-  routePath: string;
-  Component: React.ElementType;
-}
-
-const APP_ROUTES_CONFIG: Array<IRoutePrams> = [
+const APP_ROUTES_CONFIG: Array<RouteObject> = [
   {
-    routePath: "/",
-    Component: Home,
+    path: "*",
+    element: <NotFoundErrorPage />,
   },
   {
-    routePath: "/Counter",
-    Component: Counter,
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/counter",
+    element: <Counter />,
+  },
+  {
+    path: "/machine-code-problems",
+    element: <MachineCodeProblems />,
+    children: [
+      // {
+      //   path: "",
+      //   index: true,
+      //   element: <MachineCodeProblems />,
+      // },
+      {
+        path: "counter2",
+        element: <Counter />,
+      },
+    ],
   },
 ];
 
-export const AppRoutes: FC = (): ReactElement => {
-  return (
-    <Routes>
-      {APP_ROUTES_CONFIG.map((route: IRoutePrams) => {
-        const { routePath, Component } = route;
-
-        return (
-          <Route key={routePath} path={routePath} element={<Component />} />
-        );
-      })}
-    </Routes>
-  );
+export const AppRoutes: FC<{}> = (): ReactElement => {
+  return useRoutes(APP_ROUTES_CONFIG) || <NotFoundErrorPage />;
 };

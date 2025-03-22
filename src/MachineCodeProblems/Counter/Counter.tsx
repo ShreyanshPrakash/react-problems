@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useSignal } from "@preact/signals-react";
+import { MouseEvent, MouseEventHandler, useState } from "react";
 import styled from "styled-components";
 
 const CounterStyles = styled.div`
@@ -8,26 +9,54 @@ const CounterStyles = styled.div`
   }
 `;
 
+const buttonConfig = [
+  {
+    label: "+",
+    name: "increment",
+    classes: "button increment-button",
+  },
+  {
+    label: "Reset",
+    name: "reset",
+    classes: "button reset-button",
+  },
+  {
+    label: "-",
+    name: "decrement",
+    classes: "button decrement-button",
+  },
+];
+
 export const Counter = () => {
   const [counterValue, setCounterValue] = useState<number>(0);
+  let count = useSignal<number>(0);
 
-  const handleIncrement = () => {
-    setCounterValue((prev) => prev + 1);
-  };
-
-  const handleDecrement = () => {
-    setCounterValue((prev) => prev - 1);
+  const handleActionClick = (event: MouseEvent<HTMLButtonElement>) => {
+    const name = event.currentTarget.name;
+    const map: Record<string, any> = {
+      increment: count.value + 1,
+      decrement: count.value - 1,
+      reset: 0,
+    };
+    count.value = map[name];
   };
 
   return (
     <CounterStyles>
-      <p>Counter : {counterValue}</p>
-      <button className="button increment-button" onClick={handleIncrement}>
-        Click to Increment
-      </button>
-      <button className="button decrement-button" onClick={handleDecrement}>
-        Click to Decrement
-      </button>
+      <p>Counter : {count}</p>
+      {buttonConfig.map((config) => {
+        const { label, name, classes } = config;
+        return (
+          <button
+            key={label}
+            className={classes}
+            name={name}
+            onClick={handleActionClick}
+          >
+            {label}
+          </button>
+        );
+      })}
     </CounterStyles>
   );
 };

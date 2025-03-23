@@ -72,9 +72,8 @@ export const Accordion: FC<IAccordionProps> = ({
           const { name, titleText, Component } = config;
 
           return (
-            <div className="accordion-item-wrapper">
+            <div key={titleText} className="accordion-item-wrapper">
               <button
-                key={titleText}
                 name={name}
                 className="accordion-title"
                 data-index={index}

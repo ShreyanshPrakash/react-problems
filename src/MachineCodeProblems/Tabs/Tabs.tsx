@@ -1,15 +1,30 @@
 import { TabPanel } from "@/MachineCodeProblems/Tabs/TabPanel";
-import { FC, MouseEvent, useMemo, useState } from "react";
+import { FC, MouseEvent, ReactElement, useMemo, useState } from "react";
 import styled from "styled-components";
+
+/*
+    ====================================================== [Styles]======================================================
+*/
 
 const TabsStyles = styled.div``;
 
+/*
+    ====================================================== [Interfaces]======================================================
+*/
 interface ITab {
   index: number;
   label: string;
   name: string;
   conponent: FC<{ index: number }>;
 }
+
+interface ITabsProps {
+  tabsConfig: Array<ITab>;
+}
+
+/*
+    ====================================================== [Configs]======================================================
+*/
 
 const TABS_CONFIG: Array<ITab> = [
   {
@@ -26,7 +41,13 @@ const TABS_CONFIG: Array<ITab> = [
   },
 ];
 
-export const Tabs = () => {
+/*
+    ====================================================== [Tabs Component]======================================================
+*/
+
+export const Tabs: FC<ITabsProps> = ({
+  tabsConfig = TABS_CONFIG,
+}: ITabsProps): ReactElement => {
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
 
   const handleTabClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -35,14 +56,14 @@ export const Tabs = () => {
   };
 
   const ActiveTabComponent = useMemo(
-    () => TABS_CONFIG[activeTabIndex].conponent,
+    () => tabsConfig[activeTabIndex].conponent,
     [activeTabIndex]
   );
 
   return (
     <TabsStyles>
       <div className="tab-buttons-wrapper">
-        {TABS_CONFIG.map((config: ITab) => {
+        {tabsConfig.map((config: ITab) => {
           const { index, label, name } = config;
 
           return (

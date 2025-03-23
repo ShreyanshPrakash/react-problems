@@ -9,10 +9,11 @@
 5. Reset the hour counter to 0 if its more than 24 hours. Do the same for min, sec, millisecs
 
 
-# Requirements
+# Requirements :
 
 1. Have Start timer button to start the timer - Easy
 2. Reset Timer button should reset the timer to zero - Easy
 3. Stop Timer button should stop the timer but show the last updated timer - Easy
 4. Show time with two digits always - Medium
 5. Add Resume Timer button - Medium
+6. Lap timer - Medium

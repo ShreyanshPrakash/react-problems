@@ -4,6 +4,7 @@ import {
   MachineCodeProblems,
   StopWatch,
   DigitalClock,
+  Tabs,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -35,6 +36,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "digital-clock",
         element: <DigitalClock />,
+      },
+      {
+        path: "tabs",
+        element: <Tabs />,
       },
     ],
   },

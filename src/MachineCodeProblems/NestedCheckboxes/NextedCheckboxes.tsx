@@ -45,6 +45,7 @@ interface INestedCheckboxesProps {
 
 interface INestedCheckboxItem {
   name: string;
+  parentName: string;
   checked: boolean;
   level: number;
   children?: Array<INestedCheckboxItem>;
@@ -57,48 +58,57 @@ interface INestedCheckboxItem {
 const DEFAULT_CHECKBOX_CONFIG: Array<INestedCheckboxItem> = [
   {
     name: "checkbox1",
+    parentName: "",
     checked: false,
     level: 0,
     children: [
       {
         name: "child1",
+        parentName: "checkbox1",
         checked: false,
         level: 1,
       },
       {
-        name: "child1",
+        name: "child2",
+        parentName: "checkbox1",
         checked: false,
         level: 1,
         children: [
           {
-            name: "child2",
+            name: "child2Child1",
+            parentName: "child2",
             checked: false,
             level: 2,
           },
           {
-            name: "child1",
+            name: "child2Child2",
+            parentName: "child2",
             checked: false,
             level: 2,
           },
         ],
       },
       {
-        name: "child1",
+        name: "child3",
+        parentName: "checkbox1",
         checked: false,
         level: 1,
       },
       {
-        name: "child1",
+        name: "child4",
+        parentName: "checkbox1",
         checked: false,
         level: 1,
         children: [
           {
-            name: "child2",
+            name: "child1",
+            parentName: "child4",
             checked: false,
             level: 2,
           },
           {
-            name: "child1",
+            name: "child2",
+            parentName: "child4",
             checked: false,
             level: 2,
           },

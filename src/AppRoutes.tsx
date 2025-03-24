@@ -6,6 +6,7 @@ import {
   DigitalClock,
   Tabs,
   Accordion,
+  NestedCheckboxes,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -45,6 +46,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "accordion",
         element: <Accordion />,
+      },
+      {
+        path: "nested-checkboxes",
+        element: <NestedCheckboxes />,
       },
     ],
   },

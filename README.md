@@ -9,7 +9,9 @@
 4. [Tabs](src/MachineCodeProblems/Tabs/)
 5. [Accordion](src/MachineCodeProblems/Accordion/)
 
+
 ## Medium
+1. [NestedCheckboxes](src/MachineCodeProblems/NestedCheckboxes/insights.md)
 
 ## Hard
 

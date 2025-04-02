@@ -112,13 +112,13 @@ const DEFAULT_CHECKBOX_CONFIG: Array<INestedCheckboxItem> = [
         level: 1,
         children: [
           {
-            name: "child1",
+            name: "child4child1",
             parentName: "child4",
             checked: false,
             level: 2,
           },
           {
-            name: "child2",
+            name: "child4child2",
             parentName: "child4",
             checked: false,
             level: 2,
@@ -146,11 +146,11 @@ export const NestedCheckboxes: FC<INestedCheckboxesProps> = ({
   ) => {
     const checked = event.currentTarget.checked;
     const name = event.currentTarget.name;
-    const result = checkboxItem; //findTheNodeWithNodeName(name, checkboxState);
-    if (result) {
-      result.checked = checked;
-      udpateDescendants(result.children || [], checked);
-      updateAncestors(result, checked, checkboxState);
+    const macthedNode = findTheNodeWithNodeName(name, checkboxState); // checkboxItem
+    if (macthedNode) {
+      macthedNode.checked = checked;
+      udpateDescendants(macthedNode.children || [], checked);
+      updateAncestors(macthedNode, checked, checkboxState);
     }
 
     setCheckboxState(cloneDeep(checkboxState));

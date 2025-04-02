@@ -12,6 +12,9 @@ export const findTheNodeWithNodeName = (
     }
     if (item.children) {
       matchedNode = findTheNodeWithNodeName(name, item.children);
+      if(matchedNode){
+        break;
+      }
     }
   }
   return matchedNode;

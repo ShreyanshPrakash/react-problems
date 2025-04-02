@@ -1,1 +1,1 @@
-export * from "./NextedCheckboxes";
+export * from "./NestedCheckboxes";

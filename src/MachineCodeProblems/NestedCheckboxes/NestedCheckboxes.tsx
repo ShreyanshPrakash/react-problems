@@ -1,5 +1,11 @@
-import { FC, ReactElement } from "react";
+import React, { FC, ReactElement, useState } from "react";
 import styled from "styled-components";
+import { cloneDeep } from "lodash";
+import {
+  findTheNodeWithNodeName,
+  udpateDescendants,
+  updateAncestors,
+} from "./NestedCheckboxes.utils";
 
 const NESTED_LEFT_MARGIN_MULTIPLIER: number = 32;
 
@@ -41,9 +47,14 @@ interface INestedCheckboxesProps {
   checkboxesConfig: Array<INestedCheckboxItem>;
   isChildren?: boolean;
   level?: number;
+  parentState?: Record<any, any>;
+  onCheckboxClicked?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checkboxItem: INestedCheckboxItem
+  ) => void;
 }
 
-interface INestedCheckboxItem {
+export interface INestedCheckboxItem {
   name: string;
   parentName: string;
   checked: boolean;
@@ -126,6 +137,44 @@ export const NestedCheckboxes: FC<INestedCheckboxesProps> = ({
   checkboxesConfig = DEFAULT_CHECKBOX_CONFIG,
   isChildren = false,
 }: INestedCheckboxesProps): ReactElement => {
+  const [checkboxState, setCheckboxState] =
+    useState<Array<INestedCheckboxItem>>(checkboxesConfig);
+
+  const handleCheckboxChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checkboxItem: INestedCheckboxItem
+  ) => {
+    const checked = event.currentTarget.checked;
+    const name = event.currentTarget.name;
+    const result = checkboxItem; //findTheNodeWithNodeName(name, checkboxState);
+    if (result) {
+      result.checked = checked;
+      udpateDescendants(result.children || [], checked);
+      updateAncestors(result, checked, checkboxState);
+    }
+
+    setCheckboxState(cloneDeep(checkboxState));
+  };
+
+  return (
+    <NestedCheckboxesStyles>
+      <NestedComponentHelper
+        checkboxesConfig={checkboxState}
+        onCheckboxClicked={handleCheckboxChange}
+      />
+    </NestedCheckboxesStyles>
+  );
+};
+
+/*
+    ====================================================== [Nested Component]======================================================
+*/
+
+export const NestedComponentHelper: FC<INestedCheckboxesProps> = ({
+  checkboxesConfig,
+  isChildren = false,
+  onCheckboxClicked = () => {},
+}: INestedCheckboxesProps): ReactElement => {
   return (
     <NestedCheckboxesStyles>
       {checkboxesConfig.map((item: INestedCheckboxItem) => {
@@ -136,14 +185,21 @@ export const NestedCheckboxes: FC<INestedCheckboxesProps> = ({
             <CheckboxItemStyles isChild={isChildren} level={level}>
               <input
                 type="checkbox"
-                checked={checked}
                 className="checkbox-input"
+                name={name}
+                checked={checked}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  onCheckboxClicked(event, item)
+                }
               />
               <label className="checkbox-label">{name}</label>
             </CheckboxItemStyles>
 
             {children.length > 0 ? (
-              <NestedCheckboxes checkboxesConfig={children} />
+              <NestedComponentHelper
+                checkboxesConfig={children}
+                onCheckboxClicked={onCheckboxClicked}
+              />
             ) : null}
           </div>
         );

@@ -6,3 +6,4 @@ export * from "./DigitalClock";
 export * from "./Tabs";
 export * from "./Accordion";
 export * from "./NestedCheckboxes";
+export * from "./Modal";

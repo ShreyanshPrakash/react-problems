@@ -9,6 +9,7 @@ import {
   NestedCheckboxes,
   ModalPage,
   Pagination,
+  OTPLogin,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -60,6 +61,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "pagination",
         element: <Pagination />,
+      },
+      {
+        path: "otp-login",
+        element: <OTPLogin />,
       },
     ],
   },

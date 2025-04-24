@@ -11,22 +11,18 @@ const TemplateStyles = styled.div``;
     ====================================================== [Interfaces]======================================================
 */
 
+interface IPaginationProps {}
+
 /*
     ====================================================== [Configs]======================================================
 */
-
 
 /*
     ====================================================== [Template Component]======================================================
 */
 
-export const Template = () => {
-
-
-    return (
-        <TemplateStyles>
-            Template
-        </TemplateStyles>
-    )
-    
-}
+export const Template: FC<
+  IPaginationProps
+> = ({}: IPaginationProps): ReactElement => {
+  return <TemplateStyles>Template</TemplateStyles>;
+};

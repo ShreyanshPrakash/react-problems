@@ -8,6 +8,7 @@
 3. [Counter](src/MachineCodeProblems/Counter/)
 4. [Tabs](src/MachineCodeProblems/Tabs/)
 5. [Accordion](src/MachineCodeProblems/Accordion/)
+6. [Accordion](src/MachineCodeProblems/Pagination/insights.md)
 
 
 ## Medium
@@ -18,3 +19,10 @@
 
 
 # Tooling
+
+
+
+# Learnings :
+
+1. Event typescripts import from React itself
+2. Attributes should have string value. Convert always

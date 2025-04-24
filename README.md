@@ -8,7 +8,8 @@
 3. [Counter](src/MachineCodeProblems/Counter/)
 4. [Tabs](src/MachineCodeProblems/Tabs/)
 5. [Accordion](src/MachineCodeProblems/Accordion/)
-6. [Accordion](src/MachineCodeProblems/Pagination/insights.md)
+6. [Pagination](src/MachineCodeProblems/Pagination/insights.md)
+6. [OTPLogin](src/MachineCodeProblems/OTPLogin//insights.md)
 
 
 ## Medium

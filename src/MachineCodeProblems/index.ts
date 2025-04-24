@@ -8,3 +8,4 @@ export * from "./Accordion";
 export * from "./NestedCheckboxes";
 export * from "./Modal";
 export * from "./Pagination";
+export * from "./OTPLogin";

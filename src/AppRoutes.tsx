@@ -12,6 +12,8 @@ import {
   OTPLogin,
   SwitchCaseRunner,
   ProgressBarRunner,
+  ThrottledProgressBar,
+  TrafficLights,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -75,6 +77,14 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "progress-bar",
         element: <ProgressBarRunner />,
+      },
+      {
+        path: "throttled-progress-bar",
+        element: <ThrottledProgressBar />,
+      },
+      {
+        path: "traffic-lights",
+        element: <TrafficLights />,
       },
     ],
   },

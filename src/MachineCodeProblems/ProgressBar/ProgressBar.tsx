@@ -43,6 +43,10 @@ interface IProgressBarLoaderProps {
   color?: string;
 }
 
+interface IProgressBarRunnerProps {
+  onComplete: () => void;
+}
+
 /*
     ====================================================== [Configs]======================================================
 */
@@ -71,7 +75,9 @@ export const ProgressBar: FC<IProgressBarProps> = ({
     ====================================================== [Runner Component]======================================================
 */
 
-export const ProgressBarRunner = () => {
+export const ProgressBarRunner: FC<IProgressBarRunnerProps> = ({
+  onComplete,
+}: IProgressBarRunnerProps) => {
   const [progressPercentage, setProgressPercentage] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const intervalRef = useRef<null | number>(null);
@@ -90,13 +96,14 @@ export const ProgressBarRunner = () => {
     if (progressPercentage >= 100 && intervalRef.current) {
       clearInterval(intervalRef.current);
       setIsComplete(true);
+      onComplete(); // maybe generate uuid and send to parent
     }
   }, [progressPercentage]);
 
   return (
-    <>
+    <div>
       <ProgressBar progress={progressPercentage} />
       {isComplete ? <div className="complete-text">Task Completed</div> : null}
-    </>
+    </div>
   );
 };

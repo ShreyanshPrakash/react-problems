@@ -11,6 +11,7 @@ import {
   Pagination,
   OTPLogin,
   SwitchCaseRunner,
+  ProgressBarRunner,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -70,6 +71,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "switch-case",
         element: <SwitchCaseRunner />,
+      },
+      {
+        path: "progress-bar",
+        element: <ProgressBarRunner />,
       },
     ],
   },

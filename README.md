@@ -10,6 +10,7 @@
 5. [Accordion](src/MachineCodeProblems/Accordion/)
 6. [Pagination](src/MachineCodeProblems/Pagination/insights.md)
 6. [OTPLogin](src/MachineCodeProblems/OTPLogin//insights.md)
+7. [ProgressBar](src/MachineCodeProblems/ProgressBar/insights.md)
 
 
 ## Medium

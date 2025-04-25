@@ -71,7 +71,7 @@ const OTPSizes: Record<any, any> = {
 };
 
 /*
-    ====================================================== [Template Component]======================================================
+    ====================================================== [OTPLogin Component]======================================================
 */
 
 export const OTPLogin: FC<IOTPLoginProps> = ({
@@ -111,6 +111,10 @@ export const OTPLogin: FC<IOTPLoginProps> = ({
     </OTPLoginStyles>
   );
 };
+
+/*
+    ====================================================== [OTPInputBox Component]======================================================
+*/
 
 const OTPInputBox: FC<IOTPInputBoxProps> = ({
   item,

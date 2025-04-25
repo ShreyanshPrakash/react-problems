@@ -9,3 +9,4 @@ export * from "./NestedCheckboxes";
 export * from "./Modal";
 export * from "./Pagination";
 export * from "./OTPLogin";
+export * from "./SwitchCase";

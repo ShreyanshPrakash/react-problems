@@ -15,6 +15,7 @@
 ## Medium
 1. [NestedCheckboxes](src/MachineCodeProblems/NestedCheckboxes/insights.md)
 2. [Modal](src/MachineCodeProblems/Modal/insights.md)
+3. [SwitchCase](src/MachineCodeProblems/SwitchCase/insights.md)
 
 ## Hard
 

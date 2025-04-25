@@ -11,6 +11,8 @@
 6. [Pagination](src/MachineCodeProblems/Pagination/insights.md)
 6. [OTPLogin](src/MachineCodeProblems/OTPLogin//insights.md)
 7. [ProgressBar](src/MachineCodeProblems/ProgressBar/insights.md)
+7. [TrafficLights](src/MachineCodeProblems/TrafficLights/insights.md)
+7. [SimpleTrafficLights](src/MachineCodeProblems/TrafficLights/insights.md)
 
 
 ## Medium
@@ -19,6 +21,7 @@
 3. [SwitchCase](src/MachineCodeProblems/SwitchCase/insights.md)
 
 ## Hard
+1. [ThrottledProgressBar](src/MachineCodeProblems/ThrottledProgressBar/insights.md)
 
 
 # Tooling

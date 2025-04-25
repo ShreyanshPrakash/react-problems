@@ -11,3 +11,5 @@ export * from "./Pagination";
 export * from "./OTPLogin";
 export * from "./SwitchCase";
 export * from "./ProgressBar";
+export * from "./ThrottledProgressBar";
+export * from "./TrafficLights";

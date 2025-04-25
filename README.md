@@ -12,6 +12,7 @@
 6. [OTPLogin](src/MachineCodeProblems/OTPLogin//insights.md)
 7. [ProgressBar](src/MachineCodeProblems/ProgressBar/insights.md)
 7. [TrafficLights](src/MachineCodeProblems/TrafficLights/insights.md)
+7. [SimpleTrafficLights](src/MachineCodeProblems/TrafficLights/insights.md)
 
 
 ## Medium

@@ -14,6 +14,7 @@ import {
   ProgressBarRunner,
   ThrottledProgressBar,
   TrafficLights,
+  SimpleTrafficLights,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -85,6 +86,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "traffic-lights",
         element: <TrafficLights />,
+      },
+      {
+        path: "simple-traffic-lights",
+        element: <SimpleTrafficLights />,
       },
     ],
   },

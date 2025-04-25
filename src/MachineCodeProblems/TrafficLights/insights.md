@@ -3,9 +3,12 @@
 
 # INSIGHTS :
 
-1. Main thing is to figure out how to move the focus ahead or back
-2. My implementation has a wrapper component that has a ref to the input box.
-3. I track the active input feild index and based on that using ref I am bringing the focus
+1. Main thing is how to create the config for this
+2. In the config create a map with key as the name of the colors and value as object that has duration, color and "next" color key
+3. When the trigger starts, set the active color as green or take it from the prop - the start color
+4. This will take u to a effect where using the active color state, u will pull out the config of that color from the config
+5. That config will have the timer, set that as the duration for setTimeout
+6. Once the timeout completes, set the active color as the "next" key value
 
 # Requirements :
 

@@ -47,6 +47,10 @@ interface ILightProps {
   color?: string | null;
 }
 
+interface Map {
+  [key: string]: any;
+}
+
 /*
     ====================================================== [Configs]======================================================
 */
@@ -58,72 +62,64 @@ const DEFAULTS = {
   GREEN_LIGHT: "green",
 };
 
-const TRAFFIC_LIGHTS_CONFIG = [
-  {
-    name: "greenLight",
-    color: DEFAULTS.GREEN_LIGHT,
-    durationMs: 3 * 1000,
-  },
-  {
-    name: "yellowLight",
-    color: DEFAULTS.YELLOW_LIGHT,
-    durationMs: 0.5 * 1000,
-  },
-  {
+const TRAFFIC_LIGHTS_CONFIG: Map = {
+  red: {
     name: "redLight",
     color: DEFAULTS.RED_LIGHT,
     durationMs: 4 * 1000,
+    next: "green",
   },
-];
+  yellow: {
+    name: "yellowLight",
+    color: DEFAULTS.YELLOW_LIGHT,
+    durationMs: 0.5 * 1000,
+    next: "red",
+  },
+  green: {
+    name: "greenLight",
+    color: DEFAULTS.GREEN_LIGHT,
+    durationMs: 3 * 1000,
+    next: "yellow",
+  },
+};
 
 /*
     ====================================================== [TrafficLights Component]======================================================
 */
 
-export const TrafficLights: FC<
+export const SimpleTrafficLights: FC<
   ITrafficLightsProps
 > = ({}: ITrafficLightsProps): ReactElement => {
   const [isTrafficLightActive, setIsTrafficLightActive] = useState(false);
-  const [activeLightIndex, setActiveLightIndex] = useState<number>(-1);
+  const [activeColor, setActiveColor] = useState("");
 
   const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (isTrafficLightActive) {
-      handleNextLight();
-    } else {
-      cleanupTimer();
+    if (activeColor) {
+      const { durationMs, next } = TRAFFIC_LIGHTS_CONFIG[activeColor];
+      intervalRef.current = setTimeout(() => {
+        setActiveColor(next); // Main logic
+      }, durationMs);
     }
     return () => cleanupTimer();
-  }, [isTrafficLightActive]);
-
-  useEffect(() => {
-    if (activeLightIndex > -1) {
-      const config = TRAFFIC_LIGHTS_CONFIG[activeLightIndex];
-      intervalRef.current = setTimeout(() => {
-        handleNextLight();
-      }, config.durationMs);
-    }
-  }, [activeLightIndex]);
+  }, [activeColor]);
 
   /*
     User Event Methods
   */
 
   const handleStartOrStop = () => {
+    if (isTrafficLightActive) {
+      cleanupTimer();
+    } else {
+      setActiveColor("green");
+    }
     setIsTrafficLightActive((prev) => !prev);
   };
 
   const handleReset = () => {
-    setActiveLightIndex(-1);
-  };
-
-  const handleNextLight = () => {
-    const newIndex =
-      activeLightIndex + 1 >= TRAFFIC_LIGHTS_CONFIG.length
-        ? 0
-        : activeLightIndex + 1;
-    setActiveLightIndex(newIndex);
+    setActiveColor("");
   };
 
   /*
@@ -137,7 +133,7 @@ export const TrafficLights: FC<
   };
 
   const allowReset = (): boolean => {
-    return activeLightIndex != -1 && !isTrafficLightActive;
+    return activeColor != "" && !isTrafficLightActive;
   };
 
   return (
@@ -149,14 +145,13 @@ export const TrafficLights: FC<
         <button onClick={handleReset} disabled={!allowReset()}>
           Reset
         </button>
-        {/* Helpful in understanding */}
-        <button onClick={handleNextLight}>Next</button>
       </div>
+
       <div className="traffic-light-box">
-        {TRAFFIC_LIGHTS_CONFIG.map((config, index) => {
-          const { color, name } = config;
+        {Object.keys(TRAFFIC_LIGHTS_CONFIG).map((key, index) => {
+          const { color, name } = TRAFFIC_LIGHTS_CONFIG[key];
           return (
-            <Light key={name} color={activeLightIndex === index ? color : ""} />
+            <Light key={name} color={activeColor === color ? color : ""} />
           );
         })}
       </div>

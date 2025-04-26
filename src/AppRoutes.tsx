@@ -15,6 +15,7 @@ import {
   ThrottledProgressBar,
   TrafficLights,
   SimpleTrafficLights,
+  PasswordGenerator,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -90,6 +91,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "simple-traffic-lights",
         element: <SimpleTrafficLights />,
+      },
+      {
+        path: "password-generator",
+        element: <PasswordGenerator />,
       },
     ],
   },

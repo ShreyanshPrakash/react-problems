@@ -13,3 +13,4 @@ export * from "./SwitchCase";
 export * from "./ProgressBar";
 export * from "./ThrottledProgressBar";
 export * from "./TrafficLights";
+export * from "./PasswordGenerator";

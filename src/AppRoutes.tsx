@@ -16,6 +16,7 @@ import {
   TrafficLights,
   SimpleTrafficLights,
   PasswordGenerator,
+  CountdownTimer
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -95,6 +96,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "password-generator",
         element: <PasswordGenerator />,
+      },
+      {
+        path: "countdown-timer",
+        element: <CountdownTimer />,
       },
     ],
   },

@@ -11,8 +11,10 @@
 6. [Pagination](src/MachineCodeProblems/Pagination/insights.md)
 6. [OTPLogin](src/MachineCodeProblems/OTPLogin//insights.md)
 7. [ProgressBar](src/MachineCodeProblems/ProgressBar/insights.md)
-7. [TrafficLights](src/MachineCodeProblems/TrafficLights/insights.md)
-7. [SimpleTrafficLights](src/MachineCodeProblems/TrafficLights/insights.md)
+8. [TrafficLights](src/MachineCodeProblems/TrafficLights/insights.md)
+9. [SimpleTrafficLights](src/MachineCodeProblems/TrafficLights/insights.md)
+10. [PasswordGenerator](src/MachineCodeProblems/PasswordGenerator/insights.md)
+11. [CountdownTimer](src/MachineCodeProblems/CountdownTimer/insights.md)
 
 
 ## Medium
@@ -32,3 +34,4 @@
 
 1. Event typescripts import from React itself
 2. Attributes should have string value. Convert always
+3. For objects, use kyeof <Model or interface>

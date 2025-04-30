@@ -16,7 +16,9 @@ import {
   TrafficLights,
   SimpleTrafficLights,
   PasswordGenerator,
-  CountdownTimer
+  CountdownTimer,
+  DebounceRunner,
+  ThrottleRunner,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -100,6 +102,14 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "countdown-timer",
         element: <CountdownTimer />,
+      },
+      {
+        path: "debounce",
+        element: <DebounceRunner />,
+      },
+      {
+        path: "throttle",
+        element: <ThrottleRunner />,
       },
     ],
   },

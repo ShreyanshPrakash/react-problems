@@ -15,6 +15,8 @@
 9. [SimpleTrafficLights](src/MachineCodeProblems/TrafficLights/insights.md)
 10. [PasswordGenerator](src/MachineCodeProblems/PasswordGenerator/insights.md)
 11. [CountdownTimer](src/MachineCodeProblems/CountdownTimer/insights.md)
+12. [useDebounce](src/MachineCodeProblems/useDebounce/insights.md)
+12. [useThrottle](src/MachineCodeProblems/useThrottle/insights.md)
 
 
 ## Medium

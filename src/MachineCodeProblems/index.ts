@@ -15,3 +15,6 @@ export * from "./ThrottledProgressBar";
 export * from "./TrafficLights";
 export * from "./PasswordGenerator";
 export * from "./CountdownTimer";
+
+export * from "./useDebounce";
+export * from "./useThrottle"

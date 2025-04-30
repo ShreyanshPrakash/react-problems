@@ -11,7 +11,7 @@ const ProgressBarStyles = styled.div`
 
 const ProgressBarWrapper = styled.div`
   background-color: white;
-  width: 80vw;
+  width: 100%;
   height: 16px;
   border-radius: 8px;
   padding: 1px;
@@ -28,6 +28,10 @@ const ProgressBarLoader = styled.div<IProgressBarLoaderProps>`
   align-self: center;
 
   transition: width 500ms linear;
+`;
+
+const ProgressBarRunnerStyles = styled.div`
+  width: 80vw;
 `;
 
 /*
@@ -76,7 +80,7 @@ export const ProgressBar: FC<IProgressBarProps> = ({
 */
 
 export const ProgressBarRunner: FC<IProgressBarRunnerProps> = ({
-  onComplete,
+  onComplete = () => {},
 }: IProgressBarRunnerProps) => {
   const [progressPercentage, setProgressPercentage] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
@@ -101,9 +105,9 @@ export const ProgressBarRunner: FC<IProgressBarRunnerProps> = ({
   }, [progressPercentage]);
 
   return (
-    <div>
+    <ProgressBarRunnerStyles>
       <ProgressBar progress={progressPercentage} />
       {isComplete ? <div className="complete-text">Task Completed</div> : null}
-    </div>
+    </ProgressBarRunnerStyles>
   );
 };

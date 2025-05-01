@@ -16,13 +16,14 @@
 10. [PasswordGenerator](src/MachineCodeProblems/PasswordGenerator/insights.md)
 11. [CountdownTimer](src/MachineCodeProblems/CountdownTimer/insights.md)
 12. [useDebounce](src/MachineCodeProblems/useDebounce/insights.md)
-12. [useThrottle](src/MachineCodeProblems/useThrottle/insights.md)
+13. [useThrottle](src/MachineCodeProblems/useThrottle/insights.md)
 
 
 ## Medium
 1. [NestedCheckboxes](src/MachineCodeProblems/NestedCheckboxes/insights.md)
 2. [Modal](src/MachineCodeProblems/Modal/insights.md)
 3. [SwitchCase](src/MachineCodeProblems/SwitchCase/insights.md)
+4. [Snackbar](src/MachineCodeProblems/Snackbar/insights.md)
 
 ## Hard
 1. [ThrottledProgressBar](src/MachineCodeProblems/ThrottledProgressBar/insights.md)

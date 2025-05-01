@@ -19,6 +19,7 @@ import {
   CountdownTimer,
   DebounceRunner,
   ThrottleRunner,
+  SnackbarRunner,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -110,6 +111,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "throttle",
         element: <ThrottleRunner />,
+      },
+      {
+        path: "snackbar",
+        element: <SnackbarRunner />,
       },
     ],
   },

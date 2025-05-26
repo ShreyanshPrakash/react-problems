@@ -24,6 +24,7 @@
 2. [Modal](src/MachineCodeProblems/Modal/insights.md)
 3. [SwitchCase](src/MachineCodeProblems/SwitchCase/insights.md)
 4. [Snackbar](src/MachineCodeProblems/Snackbar/insights.md)
+5. [Image Corousel](src/MachineCodeProblems/ImageCorousel/insights.md)
 
 ## Hard
 1. [ThrottledProgressBar](src/MachineCodeProblems/ThrottledProgressBar/insights.md)

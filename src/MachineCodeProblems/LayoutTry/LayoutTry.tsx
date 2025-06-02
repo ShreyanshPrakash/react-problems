@@ -5,7 +5,7 @@ import styled from "styled-components";
     ====================================================== [Styles]======================================================
 */
 
-const ImageCorouselStyles = styled.div`
+const LayoutTryStyles = styled.div`
   .flex-wrapper {
     display: flex;
     flex-wrap: nowrap;
@@ -57,7 +57,7 @@ const ImageCorouselStyles = styled.div`
     ====================================================== [Interfaces]======================================================
 */
 
-interface IImageCorouselProps {
+interface LayoutTryProps {
   sliderConfig: Array<IImageSliderConfig>;
   interval: number;
 }
@@ -108,13 +108,13 @@ const DEFAULT_CONFIG = {
 };
 
 /*
-    ====================================================== [ImageCorousel Component]======================================================
+    ====================================================== [LayoutTry Component]======================================================
 */
 
-export const ImageCorousel: FC<IImageCorouselProps> = ({
+export const LayoutTry: FC<LayoutTryProps> = ({
   sliderConfig = DEFAULT_CONFIG.IMAGE_SLIDER_CONFIG,
   interval = DEFAULT_CONFIG.SLIDER_INTERVAL,
-}: IImageCorouselProps): ReactElement => {
+}: LayoutTryProps): ReactElement => {
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
   const sliderTimerRef = useRef<number | undefined>(undefined);
@@ -162,7 +162,7 @@ export const ImageCorousel: FC<IImageCorouselProps> = ({
   };
 
   return (
-    <ImageCorouselStyles>
+    <LayoutTryStyles>
       <div className="frame-wrapper">
         <div className="flex-wrapper">
           {sliderConfig.map((slider) => {
@@ -184,6 +184,6 @@ export const ImageCorousel: FC<IImageCorouselProps> = ({
           </div>
         </div>
       </div>
-    </ImageCorouselStyles>
+    </LayoutTryStyles>
   );
 };

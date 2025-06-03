@@ -5,7 +5,7 @@
 2. You will have to use the flexbox and arrange the slides accordingly
 3. Then you will have to create another layer that u can position relatively on top of the sliders
 4. Next would be to add the animations - that will be the advanced stuff
-5. U can create image component and pass the current active index's image
+5. Use transfrom and transition to animate the slide change
 
 # Requirements :
 

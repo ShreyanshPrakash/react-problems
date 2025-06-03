@@ -17,6 +17,7 @@ export * from "./PasswordGenerator";
 export * from "./CountdownTimer";
 export * from "./Snackbar";
 export * from "./ImageCorousel";
+export * from "./ImageCorouselAnimation";
 export * from "./LayoutTry";
 
 export * from "./useDebounce";

@@ -22,6 +22,7 @@ import {
   SnackbarRunner,
   ImageCorousel,
   LayoutTry,
+  ImageCorouselAnimation,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -125,6 +126,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "layouttry",
         element: <LayoutTry />,
+      },
+      {
+        path: "image-corousel-animation",
+        element: <ImageCorouselAnimation />,
       },
     ],
   },

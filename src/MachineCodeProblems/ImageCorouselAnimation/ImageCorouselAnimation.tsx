@@ -134,6 +134,18 @@ const IMAGE_SLIDER_CONFIG = [
     imgSrc: "https://picsum.photos/id/300/600/400",
     id: 3,
   },
+  {
+    alt: "fifth",
+    label: "Fifth Slide",
+    imgSrc: "https://picsum.photos/id/300/600/400",
+    id: 4,
+  },
+  {
+    alt: "sixth",
+    label: "sixth Slide",
+    imgSrc: "https://picsum.photos/id/300/600/400",
+    id: 5,
+  },
 ];
 
 const IMAGES_CONFIG = [
@@ -172,10 +184,10 @@ const DEFAULT_CONFIG = {
 };
 
 /*
-    ====================================================== [LayoutTry Component]======================================================
+    ====================================================== [ImageCorouselAnimation Component]======================================================
 */
 
-export const LayoutTry: FC<IImageCorouselAnimationProps> = ({
+export const ImageCorouselAnimation: FC<IImageCorouselAnimationProps> = ({
   sliderConfig = DEFAULT_CONFIG.IMAGE_SLIDER_CONFIG,
   interval = DEFAULT_CONFIG.SLIDER_INTERVAL,
 }: IImageCorouselAnimationProps): ReactElement => {
@@ -237,10 +249,18 @@ export const LayoutTry: FC<IImageCorouselAnimationProps> = ({
           {sliderConfig.map((slider) => {
             const { id, label, alt, imgSrc } = slider;
             return (
-              <div key={id} className="flex-item">
+              <div key={id} className="flex-item" data-id={id}>
                 <img alt={alt} src={imgSrc} />
               </div>
             );
+            /*
+                To add say only three dom elements at any time....performance....vertualization
+                 return [activeSlideIndex, activeSlideIndex - 1, activeSlideIndex + 1].includes(id) ? (
+              <div key={id} className="flex-item" data-id={id}>
+                <img alt={alt} src={imgSrc} />
+              </div>
+            ): null ;
+            */
           })}
         </div>
 

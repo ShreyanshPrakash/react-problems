@@ -175,7 +175,7 @@ const DEFAULT_CONFIG = {
     ====================================================== [ImageCorouselAnimation Component]======================================================
 */
 
-export const ImageCorouselAnimation: FC<IImageCorouselAnimationProps> = ({
+export const LayoutTry: FC<IImageCorouselAnimationProps> = ({
   sliderConfig = DEFAULT_CONFIG.IMAGE_SLIDER_CONFIG,
   interval = DEFAULT_CONFIG.SLIDER_INTERVAL,
 }: IImageCorouselAnimationProps): ReactElement => {

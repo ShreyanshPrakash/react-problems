@@ -23,6 +23,7 @@ import {
   ImageCorousel,
   LayoutTry,
   ImageCorouselAnimation,
+  NestedComments,
 } from "@/MachineCodeProblems";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -130,6 +131,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "image-corousel-animation",
         element: <ImageCorouselAnimation />,
+      },
+      {
+        path: "nested-comments",
+        element: <NestedComments />,
       },
     ],
   },

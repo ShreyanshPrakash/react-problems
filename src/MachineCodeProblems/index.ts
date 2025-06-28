@@ -20,6 +20,7 @@ export * from "./ImageCorousel";
 export * from "./ImageCorouselAnimation";
 export * from "./NestedComments";
 export * from "./LayoutTry";
+export * from "./EventEmitter/ParentComponent";
 
 export * from "./useDebounce";
 export * from "./useThrottle"

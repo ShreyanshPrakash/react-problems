@@ -26,6 +26,12 @@ import {
   NestedComments,
   ParentComponent,
 } from "@/MachineCodeProblems";
+import {
+  Revision,
+  TabRevision,
+  AccordionRevision,
+  NestedCheckboxTry,
+} from "@/Revision";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
 
@@ -140,6 +146,24 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "event-emitter",
         element: <ParentComponent />,
+      },
+    ],
+  },
+  {
+    path: "/revision",
+    element: <Revision />,
+    children: [
+      {
+        path: "tab",
+        element: <TabRevision />,
+      },
+      {
+        path: "accordion",
+        element: <AccordionRevision />,
+      },
+      {
+        path: "checkboxes",
+        element: <NestedCheckboxTry />,
       },
     ],
   },

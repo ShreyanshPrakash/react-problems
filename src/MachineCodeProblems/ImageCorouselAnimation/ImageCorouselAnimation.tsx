@@ -196,6 +196,7 @@ export const ImageCorouselAnimation: FC<IImageCorouselAnimationProps> = ({
   const sliderTimerRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
+    clearTimeout(sliderTimerRef.current);
     sliderTimerRef.current = setTimeout(() => {
       moveToNextSlide();
     }, interval);

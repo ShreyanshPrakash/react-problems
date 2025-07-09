@@ -31,6 +31,8 @@ import {
   TabRevision,
   AccordionRevision,
   NestedCheckboxTry,
+  ImageSlider,
+  ProgressBar2,
 } from "@/Revision";
 import { FC, ReactElement } from "react";
 import { NotFoundErrorPage, Home } from "@/components";
@@ -164,6 +166,14 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "checkboxes",
         element: <NestedCheckboxTry />,
+      },
+      {
+        path: "image-slider",
+        element: <ImageSlider />,
+      },
+      {
+        path: "progress-bar",
+        element: <ProgressBar2 />,
       },
     ],
   },

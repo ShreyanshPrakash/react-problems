@@ -31,6 +31,7 @@
 ## Hard
 1. [ThrottledProgressBar](src/MachineCodeProblems/ThrottledProgressBar/insights.md)
 2. [Overlapping Circles](src/MachineCodeProblems/BasicCanvas/insights.md)
+3. [TicTacToe 3x3](src/MachineCodeProblems/TicTacToe/insights.md)
 
 
 # Tooling

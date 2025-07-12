@@ -26,6 +26,7 @@ import {
   NestedComments,
   ParentComponent,
   BasicCanvas,
+  TicTacToe,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -153,6 +154,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "basic-canvas",
         element: <BasicCanvas />,
+      },
+       {
+        path: "tic-tac-toe",
+        element: <TicTacToe />,
       },
     ],
   },

@@ -25,6 +25,7 @@ import {
   ImageCorouselAnimation,
   NestedComments,
   ParentComponent,
+  BasicCanvas,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -148,6 +149,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "event-emitter",
         element: <ParentComponent />,
+      },
+      {
+        path: "basic-canvas",
+        element: <BasicCanvas />,
       },
     ],
   },

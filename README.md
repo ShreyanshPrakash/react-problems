@@ -30,6 +30,7 @@
 
 ## Hard
 1. [ThrottledProgressBar](src/MachineCodeProblems/ThrottledProgressBar/insights.md)
+2. [Overlapping Circles](src/MachineCodeProblems/BasicCanvas/insights.md)
 
 
 # Tooling

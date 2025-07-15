@@ -27,3 +27,4 @@ export * from "./TicTacToe";
 export * from "./useDebounce";
 export * from "./useThrottle"
 export * from "./useCustomFetch"
+export * from "./useCustomTimeout";

@@ -27,6 +27,7 @@ import {
   ParentComponent,
   BasicCanvas,
   TicTacToe,
+  CustomFetch,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -158,6 +159,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
        {
         path: "tic-tac-toe",
         element: <TicTacToe />,
+      },
+      {
+        path: "custom-fetch",
+        element: <CustomFetch />,
       },
     ],
   },

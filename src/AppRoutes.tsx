@@ -28,6 +28,7 @@ import {
   BasicCanvas,
   TicTacToe,
   CustomFetch,
+  CustomTimeout,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -163,6 +164,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "custom-fetch",
         element: <CustomFetch />,
+      },
+      {
+        path: "custom-timeout",
+        element: <CustomTimeout />,
       },
     ],
   },

@@ -29,6 +29,7 @@ import {
   TicTacToe,
   CustomFetch,
   CustomTimeout,
+  DragDrop,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -168,6 +169,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "custom-timeout",
         element: <CustomTimeout />,
+      },
+      {
+        path: "drag-drop",
+        element: <DragDrop />,
       },
     ],
   },

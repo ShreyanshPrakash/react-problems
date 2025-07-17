@@ -30,6 +30,7 @@ import {
   CustomFetch,
   CustomTimeout,
   DragDrop,
+  InfiniteScroll,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -173,6 +174,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "drag-drop",
         element: <DragDrop />,
+      },
+       {
+        path: "infinite-scroll",
+        element: <InfiniteScroll />,
       },
     ],
   },

@@ -31,6 +31,7 @@ import {
   CustomTimeout,
   DragDrop,
   InfiniteScroll,
+  VirtualizedList,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -178,6 +179,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
        {
         path: "infinite-scroll",
         element: <InfiniteScroll />,
+      },
+       {
+        path: "virtualized-list",
+        element: <VirtualizedList />,
       },
     ],
   },

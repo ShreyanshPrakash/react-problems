@@ -25,6 +25,7 @@ export * from "./BasicCanvas";
 export * from "./TicTacToe";
 export * from "./DragDrop";
 export * from "./InfiniteScroll";
+export * from "./VirtualizedList";
 
 export * from "./useDebounce";
 export * from "./useThrottle"

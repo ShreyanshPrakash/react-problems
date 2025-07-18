@@ -9,3 +9,5 @@
 6. Iterate over the entries and if any entry has "isIntersecting" as true, then first unobserve that, and then load the next data set
 7. threshold is to tell how much of the last item u want to be visible to trigger the event
 8. U would normally want to observe the 2nd or 3rd last item
+
+9. U can also try this problem using "scroll" event and scrollTop property

@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const DEFAULTS = {
   TOTAL_STARS: 5,
-  FILLED_STARS: 2.5,
+  FILLED_STARS: 2.2,
   FILLED: "filled",
   PARTIAL: "partial",
   UNFILLED: "unfilled",

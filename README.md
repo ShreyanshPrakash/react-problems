@@ -27,6 +27,8 @@
 5. [Image Corousel](src/MachineCodeProblems/ImageCorousel/insights.md)
 6. [Image Corousel Animation](src/MachineCodeProblems/ImageCorouselAnimation/insights.md)
 7. [NestedComments](src/MachineCodeProblems/NestedComments/insights.md)
+8. [StarRating](src/MachineCodeProblems/StarRating/insights.md)
+
 
 ## Hard
 1. [ThrottledProgressBar](src/MachineCodeProblems/ThrottledProgressBar/insights.md)

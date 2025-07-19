@@ -33,6 +33,7 @@ import {
   InfiniteScroll,
   VirtualizedList,
   StarRating,
+  TicTacToeAdvanced
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -188,6 +189,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "star-rating",
         element: <StarRating />,
+      },
+      {
+        path: "tic-tac-toe-advanced",
+        element: <TicTacToeAdvanced />,
       },
     ],
   },

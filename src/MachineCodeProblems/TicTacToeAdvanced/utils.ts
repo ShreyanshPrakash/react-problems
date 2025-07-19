@@ -1,6 +1,7 @@
 export const buildPatterns = (size: number): Array<Array<number>> => {
   let patterns = [];
 
+  // row patterns
   for (let i = 0; i < size; i++) {
     let row = [];
     for (let j = 0; j < size; j++) {
@@ -9,6 +10,7 @@ export const buildPatterns = (size: number): Array<Array<number>> => {
     patterns.push(row);
   }
 
+  // vertical patterns
   for (let i = 0; i < size; i++) {
     let row = [];
     for (let j = 0; j < size; j++) {
@@ -17,12 +19,14 @@ export const buildPatterns = (size: number): Array<Array<number>> => {
     patterns.push(row);
   }
 
+  // top to bottom diagonal
   let row = [];
   for (let i = 0; i < size; i++) {
     row.push(i + i * size);
   }
   patterns.push(row);
 
+  // bottom to top diagonal
   row = [];
   for (let i = size - 1; i >= 0; i--) {
     row.push(i + i * size);

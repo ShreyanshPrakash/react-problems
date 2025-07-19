@@ -36,6 +36,7 @@
 3. [TicTacToe 3x3](src/MachineCodeProblems/TicTacToe/insights.md)
 4. [useCustomFetch](src/MachineCodeProblems/useCustomFetch/insights.md)
 5. [InfiniteScroll](src/MachineCodeProblems/InfiniteScroll/insights.md)
+6. [TicTacToe size X size](src/MachineCodeProblems/TicTacToeAdvanced/insights.md)
 
 
 # Tooling

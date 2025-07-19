@@ -27,6 +27,7 @@ export * from "./DragDrop";
 export * from "./InfiniteScroll";
 export * from "./VirtualizedList";
 export * from "./StarRating";
+export * from "./TicTacToeAdvanced";
 
 export * from "./useDebounce";
 export * from "./useThrottle"

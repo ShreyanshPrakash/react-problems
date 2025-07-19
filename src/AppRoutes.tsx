@@ -32,6 +32,7 @@ import {
   DragDrop,
   InfiniteScroll,
   VirtualizedList,
+  StarRating,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -183,6 +184,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
        {
         path: "virtualized-list",
         element: <VirtualizedList />,
+      },
+      {
+        path: "star-rating",
+        element: <StarRating />,
       },
     ],
   },

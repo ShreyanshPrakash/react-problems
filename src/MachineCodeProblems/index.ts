@@ -28,6 +28,7 @@ export * from "./InfiniteScroll";
 export * from "./VirtualizedList";
 export * from "./StarRating";
 export * from "./TicTacToeAdvanced";
+export * from "./GoogleCalendar";
 
 export * from "./useDebounce";
 export * from "./useThrottle"

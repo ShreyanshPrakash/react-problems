@@ -36,6 +36,7 @@ import {
   TicTacToeAdvanced,
   CssGrids,
   CssPositions,
+  GoogleCalendar,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -164,7 +165,7 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
         path: "basic-canvas",
         element: <BasicCanvas />,
       },
-       {
+      {
         path: "tic-tac-toe",
         element: <TicTacToe />,
       },
@@ -180,11 +181,11 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
         path: "drag-drop",
         element: <DragDrop />,
       },
-       {
+      {
         path: "infinite-scroll",
         element: <InfiniteScroll />,
       },
-       {
+      {
         path: "virtualized-list",
         element: <VirtualizedList />,
       },
@@ -203,6 +204,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "css-positions",
         element: <CssPositions />,
+      },
+      {
+        path: "google-calendar",
+        element: <GoogleCalendar />,
       },
     ],
   },

@@ -36,8 +36,6 @@ const ChildrenComponent = () => {
     }
   }, []);
 
-  console.log(theme);
-
   return (
     <div>
       <div>Children</div>

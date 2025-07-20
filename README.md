@@ -28,6 +28,7 @@
 6. [Image Corousel Animation](src/MachineCodeProblems/ImageCorouselAnimation/insights.md)
 7. [NestedComments](src/MachineCodeProblems/NestedComments/insights.md)
 8. [StarRating](src/MachineCodeProblems/StarRating/insights.md)
+9. [Theme With React](src/MachineCodeProblems/Theme/insights.md)
 
 
 ## Hard

@@ -33,7 +33,9 @@ import {
   InfiniteScroll,
   VirtualizedList,
   StarRating,
-  TicTacToeAdvanced
+  TicTacToeAdvanced,
+  CssGrids,
+  CssPositions,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -193,6 +195,14 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "tic-tac-toe-advanced",
         element: <TicTacToeAdvanced />,
+      },
+      {
+        path: "css-grids",
+        element: <CssGrids />,
+      },
+      {
+        path: "css-positions",
+        element: <CssPositions />,
       },
     ],
   },

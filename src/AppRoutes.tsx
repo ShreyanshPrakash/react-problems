@@ -37,6 +37,7 @@ import {
   CssGrids,
   CssPositions,
   GoogleCalendar,
+  ReactTheme,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -208,6 +209,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "google-calendar",
         element: <GoogleCalendar />,
+      },
+       {
+        path: "react-theme",
+        element: <ReactTheme />,
       },
     ],
   },

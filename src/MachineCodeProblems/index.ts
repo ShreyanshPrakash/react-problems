@@ -35,5 +35,7 @@ export * from "./useThrottle"
 export * from "./useCustomFetch"
 export * from "./useCustomTimeout";
 
+export * from "./Theme";
+
 export * from "./CssGrids";
 export * from "./CssPositions";

@@ -29,6 +29,7 @@
 7. [NestedComments](src/MachineCodeProblems/NestedComments/insights.md)
 8. [StarRating](src/MachineCodeProblems/StarRating/insights.md)
 9. [Theme With React](src/MachineCodeProblems/Theme/insights.md)
+10. [Jira Drag Drop Board](src/MachineCodeProblems/JiraBoard/insights.md)
 
 
 ## Hard

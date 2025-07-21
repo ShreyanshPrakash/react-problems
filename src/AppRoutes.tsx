@@ -40,6 +40,7 @@ import {
   ReactTheme,
   RevSwitchCase,
   FileExplorerRunner,
+  JiraBoard,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -219,6 +220,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "file-explorer",
         element: <FileExplorerRunner />,
+      },
+      {
+        path: "jira-board",
+        element: <JiraBoard />,
       },
     ],
   },

@@ -38,6 +38,8 @@ import {
   CssPositions,
   GoogleCalendar,
   ReactTheme,
+  RevSwitchCase,
+  FileExplorerRunner,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -210,9 +212,13 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
         path: "google-calendar",
         element: <GoogleCalendar />,
       },
-       {
+      {
         path: "react-theme",
         element: <ReactTheme />,
+      },
+      {
+        path: "file-explorer",
+        element: <FileExplorerRunner />,
       },
     ],
   },

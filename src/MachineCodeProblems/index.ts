@@ -29,6 +29,7 @@ export * from "./VirtualizedList";
 export * from "./StarRating";
 export * from "./TicTacToeAdvanced";
 export * from "./GoogleCalendar";
+export * from "./FileExplorer";
 
 export * from "./useDebounce";
 export * from "./useThrottle"

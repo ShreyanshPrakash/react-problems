@@ -1,4 +1,4 @@
-import { findItemById, generateANewItem } from "./utils";
+import { findItemById, generateANewItem, generateANewRootItem } from "./utils";
 import { MOCK_FILE_EXPLORER } from "./mockData";
 import {
   IFileExplorerProps,
@@ -18,18 +18,33 @@ export const FileExplorerRunner: FC<IFileExplorerRunnerProps> = ({
   const [fileState, setFileState] =
     useState<Array<IFileExporerItem>>(fileItems);
 
-  const handleAdd = (item?: IFileExporerItem) => {
+  const handleRootAdd = () => {
+    const copy = cloneDeep(fileState);
+    copy.push(generateANewRootItem(copy));
+    setFileState([...copy]);
+  };
+
+  const handleAdd = (
+    item: IFileExporerItem,
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.stopPropagation();
     if (item) {
       const copy = cloneDeep(fileState);
       let matchedItem = findItemById(item.id, copy);
       if (matchedItem) {
         matchedItem.children.push(generateANewItem(matchedItem));
+        matchedItem.isExpanded = true;
         setFileState([...copy]);
       }
     }
   };
 
-  const handleDelete = (item?: IFileExporerItem) => {
+  const handleDelete = (
+    item: IFileExporerItem,
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.stopPropagation();
     if (item) {
       const copy = cloneDeep(fileState);
       if (item.parentId === null) {
@@ -48,11 +63,25 @@ export const FileExplorerRunner: FC<IFileExplorerRunnerProps> = ({
     }
   };
 
+  const handleToggleExpand = (
+    item: IFileExporerItem,
+    event?: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    if (item) {
+      const copy = cloneDeep(fileState);
+      let matchedItem = findItemById(item.id, copy);
+      if (matchedItem) {
+        matchedItem.isExpanded = !matchedItem.isExpanded;
+        setFileState([...copy]);
+      }
+    }
+  };
+
   return (
     <Styles>
       <div className="header-actions">
         <div className="add-item">
-          <button onClick={() => handleAdd()}>Add</button>
+          <button onClick={handleRootAdd}>Add</button>
         </div>
       </div>
       <div className="wrapper">
@@ -60,6 +89,7 @@ export const FileExplorerRunner: FC<IFileExplorerRunnerProps> = ({
           fileItems={fileState}
           onAdd={handleAdd}
           onDelete={handleDelete}
+          onItemClick={handleToggleExpand}
         />
       </div>
     </Styles>
@@ -77,7 +107,7 @@ const FileItemStyles = styled.div<IFileItemStyles>`
     border-radius: 8px;
     padding: 8px;
     margin: 16px;
-    min-width: 320px;
+    width: 560px;
     align-items: center;
 
     .file-item-name {
@@ -89,7 +119,7 @@ const FileItemStyles = styled.div<IFileItemStyles>`
       gap: 16px;
     }
 
-    margin-left: ${({ level }) => level * 32}px;
+    margin-left: ${({ level }) => level * 56}px;
   }
 `;
 
@@ -97,11 +127,12 @@ const FileExplorer: FC<IFileExplorerProps> = ({
   fileItems,
   onAdd,
   onDelete,
+  onItemClick,
 }) => {
   return (
     <FileExplorerStyles>
       {fileItems.map((item: IFileExporerItem, index: number) => {
-        const { id, parentId, level, name, type, children } = item;
+        const { id, parentId, level, name, type, isExpanded, children } = item;
 
         return (
           <>
@@ -114,20 +145,31 @@ const FileExplorer: FC<IFileExplorerProps> = ({
                 <div className="file-item-name">{name}</div>
                 <div className="actions-wrapper">
                   <div className="add-item">
-                    <button onClick={() => onAdd(item)}>Add</button>
+                    <button onClick={(event) => onAdd(item, event)}>Add</button>
                   </div>
                   <div className="add-item">
-                    <button onClick={() => onDelete(item)}>Delete</button>
+                    <button onClick={(event) => onDelete(item, event)}>
+                      Delete
+                    </button>
+                  </div>
+                  <div className="add-item">
+                    <button
+                      onClick={(event) => onItemClick(item, event)}
+                      disabled={!children.length}
+                    >
+                      {isExpanded ? "Collapse" : "Expand"} ({children.length})
+                    </button>
                   </div>
                 </div>
               </div>
-              {children.length > 0 ? (
+              {children.length > 0 && isExpanded ? (
                 <div className="file-children">
                   <FileExplorer
                     key={`${id} - ${parentId}`}
                     fileItems={children}
                     onAdd={onAdd}
                     onDelete={onDelete}
+                    onItemClick={onItemClick}
                   />
                 </div>
               ) : null}

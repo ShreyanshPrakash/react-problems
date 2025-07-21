@@ -38,3 +38,15 @@ export const generateANewItem = (matchedItem: IFileExporerItem) => {
     children: [],
   };
 };
+
+export const generateANewRootItem = (filrState: Array<IFileExporerItem>) => {
+  const id = uniqueId();
+  return {
+    id: id,
+    parentId: null,
+    level: 0,
+    name: `${id} child ${filrState.length + 1}`,
+    type: "file",
+    children: [],
+  };
+};

@@ -39,6 +39,7 @@
 5. [InfiniteScroll](src/MachineCodeProblems/InfiniteScroll/insights.md)
 6. [TicTacToe size X size](src/MachineCodeProblems/TicTacToeAdvanced/insights.md)
 7. [Google Calendar](src/MachineCodeProblems/GoogleCalendar/insights.md)
+8. [File Explorer](src/MachineCodeProblems/FileExplorer/insights.md)
 
 
 # Tooling

@@ -41,6 +41,7 @@ import {
   RevSwitchCase,
   FileExplorerRunner,
   JiraBoard,
+  FeatureFlags,
 } from "@/MachineCodeProblems";
 import {
   Revision,
@@ -224,6 +225,10 @@ const MACHINE_CODE_PROBLEM_ROUTES: Array<RouteObject> = [
       {
         path: "jira-board",
         element: <JiraBoard />,
+      },
+      {
+        path: "feature-flags",
+        element: <FeatureFlags />,
       },
     ],
   },

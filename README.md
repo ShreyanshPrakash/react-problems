@@ -30,6 +30,7 @@
 8. [StarRating](src/MachineCodeProblems/StarRating/insights.md)
 9. [Theme With React](src/MachineCodeProblems/Theme/insights.md)
 10. [Jira Drag Drop Board](src/MachineCodeProblems/JiraBoard/insights.md)
+11. [Feature Flag](src/MachineCodeProblems/FeatureFlags/insights.md)
 
 
 ## Hard

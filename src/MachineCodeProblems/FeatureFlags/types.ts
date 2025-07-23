@@ -4,7 +4,7 @@ export interface IInitialContext{
 }
 
 export interface IFeatureProps{
-    field: keyof IInitialContext;
+    flag: keyof IInitialContext;
 }
 
 export interface IMyFeatureContextProviderProps{

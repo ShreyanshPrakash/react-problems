@@ -10,17 +10,17 @@ export const FeatureFlags = () => {
   return (
     <Styles>
       <MyFeatureContextProvider>
-        <Feature field="showTitle">Hello world</Feature>
+        <Feature flag="showTitle">Hello world</Feature>
       </MyFeatureContextProvider>
     </Styles>
   );
 };
 
 const Feature: FC<React.PropsWithChildren<IFeatureProps>> = ({
-  field,
+  flag,
   children,
 }) => {
   const context = useMyFeatureContext();
 
-  return <>{context[field] ? children : null}</>;
+  return <>{context[flag] ? children : null}</>;
 };
